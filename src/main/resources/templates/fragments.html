@@ -32,7 +32,7 @@
         <tr th:each="value : ${job}">
 
             <td th:text="${#strings.capitalizeWords(value.key)}"></td>
-            <a th:href="@{/list/jobs(column=${column},value=${item})}"><td th:text="${value.value}"></td></a>
+            <td> <a th:href="@{/list/jobs(column=${value.key},value=${value.value})}" th:text="${value.value}"></a></td>
         </tr>
 
     </table>
