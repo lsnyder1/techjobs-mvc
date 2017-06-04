@@ -27,5 +27,15 @@
         </div>
     </div>
 
+    <table th:fragment="jobslist" class="job-listing" th:each="job : ${jobs}">
+
+        <tr th:each="value : ${job}">
+
+            <td th:text="${#strings.capitalizeWords(value.key)}"></td>
+            <a th:href="@{/list/jobs(column=${column},value=${item})}"><td th:text="${value.value}"></td></a>
+        </tr>
+
+    </table>
+
 </body>
 </html>
