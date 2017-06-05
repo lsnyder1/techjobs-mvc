@@ -31,7 +31,7 @@ public class SearchController {
         model.addAttribute("columns",ListController.columnChoices);
 
         if (searchType.equals("all")) {
-            jobs = JobData.findByValue(searchType);
+            jobs = JobData.findByValue(searchTerm);
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
